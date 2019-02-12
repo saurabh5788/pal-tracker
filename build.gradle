@@ -29,7 +29,7 @@ dependencies {
 }
 
 bootRun.environment([
-        "WELCOME_MESSAGE": "hello PCF",
+        "WELCOME_MESSAGE": "hello PCF123",
         "PORT":"8675b",
         "MEMORY_LIMIT":"12Gb",
         "CF_INSTANCE_INDEX":"34b",
