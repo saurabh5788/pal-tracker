@@ -13,6 +13,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class InMemoryTimeEntryRepositoryTest {
     @Test
     public void create() throws Exception {
+        System.out.println("Create Test");
         InMemoryTimeEntryRepository repo = new InMemoryTimeEntryRepository();
 
         long projectId = 123L;
@@ -29,6 +30,7 @@ public class InMemoryTimeEntryRepositoryTest {
 
     @Test
     public void find() throws Exception {
+        System.out.println("Find Test");
         InMemoryTimeEntryRepository repo = new InMemoryTimeEntryRepository();
 
         long projectId = 123L;
@@ -53,6 +55,7 @@ public class InMemoryTimeEntryRepositoryTest {
 
     @Test
     public void list() throws Exception {
+        System.out.println("List Test");
         InMemoryTimeEntryRepository repo = new InMemoryTimeEntryRepository();
         repo.create(new TimeEntry(123L, 456L, LocalDate.parse("2017-01-08"), 8));
         repo.create(new TimeEntry(789L, 654L, LocalDate.parse("2017-01-07"), 4));
@@ -66,6 +69,7 @@ public class InMemoryTimeEntryRepositoryTest {
 
     @Test
     public void update() throws Exception {
+        System.out.println("Update Test");
         InMemoryTimeEntryRepository repo = new InMemoryTimeEntryRepository();
         TimeEntry created = repo.create(new TimeEntry(123L, 456L, LocalDate.parse("2017-01-08"), 8));
 
@@ -74,6 +78,7 @@ public class InMemoryTimeEntryRepositoryTest {
                 new TimeEntry(321L, 654L, LocalDate.parse("2017-01-09"), 5));
 
         TimeEntry expected = new TimeEntry(created.getId(), 321L, 654L, LocalDate.parse("2017-01-09"), 5);
+
         assertThat(updatedEntry).isEqualTo(expected);
         assertThat(repo.find(created.getId())).isEqualTo(expected);
     }
@@ -91,6 +96,7 @@ public class InMemoryTimeEntryRepositoryTest {
 
     @Test
     public void delete() throws Exception {
+        System.out.println("Delete Test");
         InMemoryTimeEntryRepository repo = new InMemoryTimeEntryRepository();
 
         long projectId = 123L;
